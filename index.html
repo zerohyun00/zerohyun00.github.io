@@ -36,7 +36,7 @@
     <section class="bg-light py-3 border-bottom mt-5">
         <div class="container">
         <div class="d-md-inline-block text-center">
-        <img src="./maxresdefault.jpg" alt="profile image" class="rounded-circle wow bounceInUp" height="300">
+        <img src="./maxresdefault.jpg" alt="profile image" class="rounded-circle wow bounceInUp" height="250">
     </div>
     <div class="d-md-inline-block align-middle mx-3 my-3">
         <h1 class="fw-bold mb-0 text-md-start text-center">YOUNGHYUN KIM</h1>
@@ -180,10 +180,20 @@
 <script>
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+  const toastTrigger = document.getElementById('liveToastBtn')
+  const toastLiveExample = document.getElementById('liveToast')
+
+  if (toastTrigger) {
+      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+      toastTrigger.addEventListener('click', () => {
+          toastBootstrap.show()
+      })
+  }
 </script>
 <script src="./wow.min.js"></script>
 <script>
-  new WoW().init();
+  new WOW().init();
 </script>
 </body>
 </html>
